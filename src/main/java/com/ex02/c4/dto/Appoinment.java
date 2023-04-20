@@ -4,6 +4,8 @@
 package com.ex02.c4.dto;
 
 import java.sql.Date;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +31,12 @@ public class Appoinment {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date_appoinment;
+
+	@Column(name = "status")
+	private String status;
+
+	@Column(name = "description")
+	private String description;
 
 	@ManyToOne
 	@JoinColumn(name = "client_id")
@@ -114,6 +122,34 @@ public class Appoinment {
 	 */
 	public void setDentist(Dentist dentist) {
 		this.dentist = dentist;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	// ------------------Methods-----------------------

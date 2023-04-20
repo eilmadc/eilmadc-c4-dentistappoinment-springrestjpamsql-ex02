@@ -5,34 +5,43 @@ package com.ex02.c4.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ex02.c4.dao.IDentistDAO;
 import com.ex02.c4.dto.Dentist;
 
 /**
  * @author elena-01
  *
  */
-public class DentistServiceImpl {
 
-	public static List<Dentist> listDentists() {
-		// TODO Auto-generated method stub
-		return null;
+@Service
+public class DentistServiceImpl implements DentistService {
+
+	@Autowired
+	IDentistDAO iDentistDAO;
+
+	public List<Dentist> listDentists() {
+
+		return iDentistDAO.findAll();
 	}
 
 	public Dentist saveDentist(Dentist dentist) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	//Get Dentist By ID
+
+		return iDentistDAO.save(dentist);
+	}	
+
+	// Get Dentist By ID
 	public Dentist getDentistById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return iDentistDAO.findById(id).get();
 	}
 
-	//Delete Dentist
+	// Delete Dentist
 	public void deleteDentist(int id) {
-		// TODO Auto-generated method stub
-		
-	}
 
+		iDentistDAO.deleteById(id);
+	}
 
 }

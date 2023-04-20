@@ -32,7 +32,7 @@ public class DentistController {
 	//List of all Dentists
 	@GetMapping("/dentists")
 	public List<Dentist> listDentists(){
-		return DentistServiceImpl.listDentists();
+		return dentistServiceImpl.listDentists();
 	}
 	
 	//Create a Dentist
