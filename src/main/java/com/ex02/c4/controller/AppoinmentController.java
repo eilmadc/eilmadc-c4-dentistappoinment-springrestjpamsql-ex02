@@ -36,6 +36,18 @@ public class AppoinmentController {
 		return appoinmentServiceImpl.listAppoinments();
 	}
 
+	// GET: List of all appoinments as a dentist
+	@GetMapping("/appoinments/dentists/{id}")
+	public List<Appoinment> listAppoinmentsAsDentist(@PathVariable(name="dentist_id") int id) {
+		return appoinmentServiceImpl.listAppoinmentsByDentist(id);
+	}
+	
+	// GET: List of all appoinments as a dentist
+	@GetMapping("/appoinments/clients/{id}")
+	public List<Appoinment> listAppoinmentsAsClient(@PathVariable(name="client_id") int id) {
+		return appoinmentServiceImpl.listAppoinmentsByClient(id);
+	}
+	
 	// POST: Create a new appoinment
 	@PostMapping("/appoinments")
 	public Appoinment saveAppoinment(@RequestBody Appoinment appoinment) {
@@ -46,28 +58,23 @@ public class AppoinmentController {
 	@GetMapping("/appoinments/{id}")
 	public Appoinment getAppoinmentById(@PathVariable(name = "id") int id) {
 
-		Appoinment appoinment_bid = new Appoinment();
-		appoinment_bid = appoinmentServiceImpl.getAppoinmentById(id);
-		System.out.println("Appoinment by id: " + appoinment_bid);
-		return appoinment_bid;
+		return appoinmentServiceImpl.getAppoinmentById(id);
 	}
 
 	// PUT: an appoinment by id
 	@PutMapping("/appoinments/{id}")
 	public Appoinment updateAppoinment(@PathVariable(name = "id") int id, @RequestBody Appoinment appoinment) {
 		Appoinment appoinment_selected = new Appoinment();
-		Appoinment appoinment_updated = new Appoinment();
 
 		appoinment_selected = appoinmentServiceImpl.getAppoinmentById(id);
+		
 		appoinment_selected.setDate_appoinment(appoinment.getDate_appoinment());
 		appoinment_selected.setDescription(appoinment.getDescription());
 		appoinment_selected.setStatus(appoinment.getStatus());
 		appoinment_selected.setDentist(appoinment.getDentist());
 		appoinment_selected.setClient(appoinment.getClient());
 
-		appoinment_updated = appoinmentServiceImpl.updateAppoinment(appoinment);
-
-		return appoinment_updated;
+		return appoinmentServiceImpl.updateAppoinment(appoinment_selected);
 
 	}
 	

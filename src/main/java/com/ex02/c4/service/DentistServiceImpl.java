@@ -22,11 +22,13 @@ public class DentistServiceImpl implements DentistService {
 	@Autowired
 	IDentistDAO iDentistDAO;
 
+	//Get:All Destists
 	public List<Dentist> listDentists() {
 
 		return iDentistDAO.findAll();
 	}
 
+	//Post: Save new Dentist
 	public Dentist saveDentist(Dentist dentist) {
 
 		return iDentistDAO.save(dentist);
@@ -38,10 +40,18 @@ public class DentistServiceImpl implements DentistService {
 		return iDentistDAO.findById(id).get();
 	}
 
+	//Put Dentist By ID
+	@Override
+	public Dentist updateDentist(Dentist dentist) {
+		// TODO Auto-generated method stub
+		return iDentistDAO.save(dentist);
+	}
+	
 	// Delete Dentist
 	public void deleteDentist(int id) {
 
 		iDentistDAO.deleteById(id);
 	}
+
 
 }

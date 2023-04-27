@@ -43,25 +43,29 @@ public class DentistController {
 	}
 	
 	//Get Dentist By ID
-	@GetMapping("/dentist/{id}")
+	@GetMapping("/dentists/{id}")
 	public Dentist getDentistById(@PathVariable(name="id") int id) {
+
 		
-		Dentist dentist_bid= new Dentist();
-		
-		dentist_bid=dentistServiceImpl.getDentistById(id);
-		
-		System.out.println("Dentist By ID: "+dentist_bid);
-		
-		return dentist_bid;
+		return dentistServiceImpl.getDentistById(id);
 	}
 	
-	//Update Dentist
-	@PutMapping ("/dentist/{id}")
-	public Dentist udpateDentist(@PathVariable(name="id") int id) {
-		Dentist dentist_bid = new Dentist();
-		dentist_bid = dentistServiceImpl.getDentistById(id);
-		System.out.println("Dentist XID:"+dentist_bid);
-		return dentist_bid;
+	//Update a Dentist
+	@PutMapping ("/dentists/{id}")
+	public Dentist udpateDentist(@PathVariable(name="id") int id, @RequestBody Dentist dentist) {
+		Dentist dentist_selected = new Dentist();
+
+		dentist_selected = dentistServiceImpl.getDentistById(id);
+		
+		dentist_selected.setName(dentist.getName());
+		dentist_selected.setLastname(dentist.getLastname());
+		dentist_selected.setAddress(dentist.getAddress());
+		dentist_selected.setEmail(dentist.getEmail());
+		dentist_selected.setUsername(dentist.getUsername());
+		dentist_selected.setPassword(dentist.getPassword());
+
+		return dentistServiceImpl.updateDentist(dentist_selected);
+
 	}
 	
 	

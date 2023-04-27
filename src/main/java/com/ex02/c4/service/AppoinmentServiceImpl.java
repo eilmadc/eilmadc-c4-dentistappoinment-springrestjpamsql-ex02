@@ -52,4 +52,18 @@ public class AppoinmentServiceImpl implements AppoinmentService{
 		iAppoinmentDAO.deleteById(id);
 	}
 
+	//Get all appoinments by dentist id
+	@Override
+	public List<Appoinment> listAppoinmentsByDentist(int id) {
+		// TODO Auto-generated method stub
+		return iAppoinmentDAO.findAllByDentist(id);
+	}
+
+	//Get all appoinments by client id
+	@Override
+	public List<Appoinment> listAppoinmentsByClient(int id) {
+		// TODO Auto-generated method stub
+		return iAppoinmentDAO.findAllByClient(id);
+	}
+
 }

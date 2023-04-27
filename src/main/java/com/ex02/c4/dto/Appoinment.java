@@ -3,7 +3,9 @@
  */
 package com.ex02.c4.dto;
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,6 +32,7 @@ public class Appoinment {
 	private int id;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	//@Column(name = "date_appoinment")
 	private Date date_appoinment;
 
 	@Column(name = "status")
@@ -93,6 +96,7 @@ public class Appoinment {
 	 * @param date_appoinment the date_appoinment to set
 	 */
 	public void setDate_appoinment(Date date_appoinment) {
+		
 		this.date_appoinment = date_appoinment;
 	}
 

@@ -46,29 +46,25 @@ public class ClientController {
 	@GetMapping("/clients/{id}")
 	public Client getClientById(@PathVariable(name = "id") int id) {
 
-		Client client_bid = new Client();
-		client_bid = clientServiceImpl.getClientById(id);
-		System.out.println("Client by id: " + client_bid);
-		return client_bid;
+		return clientServiceImpl.getClientById(id);
 	}
 
 	// PUT: update an client
 	@PutMapping("/clients/{id}")
 	public Client updateClient(@PathVariable(name = "id") int id, @RequestBody Client client) {
 		Client client_selected = new Client();
-		Client client_updated = new Client();
 
 		client_selected = clientServiceImpl.getClientById(id);
+		
 		client_selected.setName(client.getName());
 		client_selected.setLastname(client.getLastname());
 		client_selected.setAddress(client.getAddress());
 		client_selected.setEmail(client.getEmail());
 		client_selected.setUsername(client.getUsername());
 		client_selected.setPassword(client.getPassword());
+		client_selected.setDate_up(client.getDate_up());
 
-		client_updated = clientServiceImpl.updateClient(client);
-		System.out.println("Client updated: " + client_updated);
-		return client_updated;
+		return clientServiceImpl.updateClient(client_selected);
 
 	}
 	
