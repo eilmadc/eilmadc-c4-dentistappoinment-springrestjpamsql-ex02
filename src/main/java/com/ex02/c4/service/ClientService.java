@@ -12,13 +12,15 @@ import com.ex02.c4.dto.Client;
  *
  */
 public interface ClientService {
-	public List<Client> listClients();
+	
+	//Methods CRUD forn Client
+	public List<Client> listClients();//READ: list with all Clients
 
-	public Client saveClient(Client client);
+	public Client saveClient(Client client);//CREATE: an Client
 
-	public Client getClientById(int id);
+	public Client getClientById(int id);//READ: Clients by id
 
-	public Client updateClient(Client client);
+	public Client updateClient(Client client);//UPDATE: Client
 
-	public void deleteClient(int id);
+	public void deleteClient(int id);//DELETE: Client
 }

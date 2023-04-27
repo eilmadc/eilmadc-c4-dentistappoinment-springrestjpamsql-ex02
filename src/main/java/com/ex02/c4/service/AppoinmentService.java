@@ -12,21 +12,22 @@ import com.ex02.c4.dto.Appoinment;
  *
  */
 
-//Methods CRUD
 public interface AppoinmentService {
 
-	public List<Appoinment> listAppoinments();
-	
-	public List<Appoinment> listAppoinmentsByDentist(int i);
-	
-	public List<Appoinment> listAppoinmentsByClient(int i);
+	//Methods CRUD for Appoinment
+	public List<Appoinment> listAppoinments(); //READ: list with all appoinments
 
-	public Appoinment saveAppoinment(Appoinment appoinment);
+	public Appoinment saveAppoinment(Appoinment appoinment);//CREATE: an appoinment
 
-	public Appoinment getAppoinmentById(int id);
+	public Appoinment getAppoinmentById(int id); //READ: Appointments by id
 
-	public Appoinment updateAppoinment(Appoinment appoinment);
+	public Appoinment updateAppoinment(Appoinment appoinment); //UPDATE: appoinment
 
-	void deleteClient(int id);
+	public void deleteAppoinment(int id);//DELETE: Appoinment
+
+	public List<Appoinment> listAppoinmentsByDentistId(int id); //READ: Get all Appoinments for an Dentist by Id
+
+	public List<Appoinment> listAppoinmentsByClientId(int id);//READ: Get all Appoinments for an Client by Id
+
 
 }

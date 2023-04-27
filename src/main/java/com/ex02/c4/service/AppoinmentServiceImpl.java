@@ -22,48 +22,54 @@ public class AppoinmentServiceImpl implements AppoinmentService{
 	@Autowired
 	IAppoinmentDAO iAppoinmentDAO;
 
+	//------------Methods CRUD---------
+	//READ: list with all appoinments
 	@Override
 	public List<Appoinment> listAppoinments() {
-		// TODO Auto-generated method stub
+		
 		return iAppoinmentDAO.findAll();
 	}
 
+	//CREATE: an appoinment
 	@Override
 	public Appoinment saveAppoinment(Appoinment appoinment) {
-		// TODO Auto-generated method stub
+		
 		return iAppoinmentDAO.save(appoinment);
 	}
 
+	//READ: Appointments by id
 	@Override
 	public Appoinment getAppoinmentById(int id) {
-		// TODO Auto-generated method stub
+		
 		return iAppoinmentDAO.findById(id).get();
 	}
 
+	//UPDATE: appoinment
 	@Override
 	public Appoinment updateAppoinment(Appoinment appoinment) {
-		// TODO Auto-generated method stub
+		
 		return iAppoinmentDAO.save(appoinment);
 	}
 
+	//DELETE: Appoinment
 	@Override
-	public void deleteClient(int id) {
-		// TODO Auto-generated method stub
+	public void deleteAppoinment(int id) {
+		
 		iAppoinmentDAO.deleteById(id);
 	}
 
-	//Get all appoinments by dentist id
+	//READ: Get all appoinments by dentist id
 	@Override
-	public List<Appoinment> listAppoinmentsByDentist(int id) {
-		// TODO Auto-generated method stub
-		return iAppoinmentDAO.findAllByDentist(id);
+	public List<Appoinment> listAppoinmentsByDentistId(int id) {
+		
+		return iAppoinmentDAO.findAllByDentistId(id);
 	}
 
-	//Get all appoinments by client id
+	//READ: Get all appoinments by client id
 	@Override
-	public List<Appoinment> listAppoinmentsByClient(int id) {
-		// TODO Auto-generated method stub
-		return iAppoinmentDAO.findAllByClient(id);
+	public List<Appoinment> listAppoinmentsByClientId(int id) {
+		
+		return iAppoinmentDAO.findAllByClientId(id);
 	}
 
 }

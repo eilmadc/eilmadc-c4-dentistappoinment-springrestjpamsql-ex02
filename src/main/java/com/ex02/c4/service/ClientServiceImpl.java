@@ -16,37 +16,40 @@ import com.ex02.c4.dto.Client;
  *
  */
 
-
 @Service
-public class ClientServiceImpl implements ClientService{
+public class ClientServiceImpl implements ClientService {
 
 	@Autowired
 	IClientDAO iClientDAO;
-	
+
+	// READ: list with all Clients
 	public List<Client> listClients() {
-		// TODO Auto-generated method stub
+
 		return iClientDAO.findAll();
 	}
 
+	// CREATE: an Client
 	public Client saveClient(Client client) {
-		// TODO Auto-generated method stub
+
 		return iClientDAO.save(client);
 	}
 
+	// READ: Clients by id
 	public Client getClientById(int id) {
-		// TODO Auto-generated method stub
+
 		return iClientDAO.findById(id).get();
 	}
 
+	// UPDATE: Client
 	public Client updateClient(Client client) {
-		// TODO Auto-generated method stub
+
 		return iClientDAO.save(client);
 	}
 
+	// DELETE: Client
 	public void deleteClient(int id) {
-		// TODO Auto-generated method stub
+
 		iClientDAO.deleteById(id);
 	}
-
 
 }

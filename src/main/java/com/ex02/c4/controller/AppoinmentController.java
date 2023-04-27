@@ -35,17 +35,18 @@ public class AppoinmentController {
 	public List<Appoinment> listAppoinments() {
 		return appoinmentServiceImpl.listAppoinments();
 	}
+	
 
 	// GET: List of all appoinments as a dentist
-	@GetMapping("/appoinments/dentists/{id}")
+	@GetMapping("/appoinments/dentists/{dentist_id}")
 	public List<Appoinment> listAppoinmentsAsDentist(@PathVariable(name="dentist_id") int id) {
-		return appoinmentServiceImpl.listAppoinmentsByDentist(id);
+		return appoinmentServiceImpl.listAppoinmentsByDentistId(id);
 	}
 	
 	// GET: List of all appoinments as a dentist
-	@GetMapping("/appoinments/clients/{id}")
+	@GetMapping("/appoinments/clients/{client_id}")
 	public List<Appoinment> listAppoinmentsAsClient(@PathVariable(name="client_id") int id) {
-		return appoinmentServiceImpl.listAppoinmentsByClient(id);
+		return appoinmentServiceImpl.listAppoinmentsByClientId(id);
 	}
 	
 	// POST: Create a new appoinment
@@ -81,6 +82,6 @@ public class AppoinmentController {
 	//DELETE: delete an appoinment
 	@DeleteMapping("/appoinments/{id}")
 	public void deleteAppointment(@PathVariable(name="id") int id) {
-		appoinmentServiceImpl.deleteClient(id);
+		appoinmentServiceImpl.deleteAppoinment(id);
 	}
 }

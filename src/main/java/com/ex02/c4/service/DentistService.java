@@ -12,13 +12,15 @@ import com.ex02.c4.dto.Dentist;
  *
  */
 public interface DentistService {
-	public List<Dentist> listDentists();
+	
+	//Methods CRUD for Dentist
+	public List<Dentist> listDentists();//READ: list with all Dentists
 
-	public Dentist saveDentist(Dentist dentist);
+	public Dentist saveDentist(Dentist dentist);//CREATE: an Dentist
 
-	public Dentist getDentistById(int id);
+	public Dentist getDentistById(int id);//READ: Dentists by id
 
-	public Dentist updateDentist(Dentist dentist);
+	public Dentist updateDentist(Dentist dentist);//UPDATE: Dentist
 
-	public void deleteDentist(int id);
+	public void deleteDentist(int id);//DELETE: Client
 }

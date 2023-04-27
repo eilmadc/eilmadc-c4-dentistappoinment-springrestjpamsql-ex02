@@ -15,8 +15,8 @@ import com.ex02.c4.dto.Appoinment;
  */
 public interface IAppoinmentDAO extends JpaRepository<Appoinment, Integer> {
 
-	List<Appoinment> findAllByDentist(int i);
+	List<Appoinment> findAllByDentistId(int dentist_id);
 	
-	List<Appoinment> findAllByClient(int i);
+	List<Appoinment> findAllByClientId(int client_id);
 
 }

@@ -22,6 +22,10 @@ import jakarta.persistence.TemporalType;
  * @author elena-01
  *
  */
+
+/*
+ * Entity APPOINMENT
+ */
 @Entity
 @Table(name = "appoinments")
 public class Appoinment {
@@ -32,7 +36,6 @@ public class Appoinment {
 	private int id;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	//@Column(name = "date_appoinment")
 	private Date date_appoinment;
 
 	@Column(name = "status")
@@ -41,21 +44,26 @@ public class Appoinment {
 	@Column(name = "description")
 	private String description;
 
+	//Relationship ManyToOne with Entity Client by id
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	Client client;
 
+	//Relationship ManyToOne with Entity Dentist by id
 	@ManyToOne
 	@JoinColumn(name = "dentist_id")
 	Dentist dentist;
 
 	// ------------------Constructors-----------------------
 
+	/* Default constructor */
 	public Appoinment() {
 
 	}
 
 	/**
+	 * Constructor with params
+	 * 
 	 * @param id
 	 * @param date_appoinment
 	 * @param client
@@ -157,6 +165,8 @@ public class Appoinment {
 	}
 
 	// ------------------Methods-----------------------
+	
+	/* Method to print the attributes class*/
 	@Override
 	public String toString() {
 		return "Appoinment [id=" + id + ", date_appoinment=" + date_appoinment + ", client=" + client + ", dentist="
