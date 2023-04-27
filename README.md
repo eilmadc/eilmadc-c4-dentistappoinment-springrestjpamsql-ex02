@@ -94,7 +94,7 @@ Link: https://www.postman.com/eilmadc/workspace/eilmadc-ws/collection/17239322-4
    
    ![image](https://user-images.githubusercontent.com/57563030/234980357-68497a38-524d-4845-9ed4-bddb58cf626f.png) 
 
-### 6. Read all appointments for an client (by id)
+### 6. Read all appointments for a client (by id)
    - **method:** GET
    - **endpoint:** localhost:8181/api/appoinments/clients/{id}
    - **example:** localhost:8181/api/appoinments/clients/5
@@ -127,7 +127,7 @@ Link: https://www.postman.com/eilmadc/workspace/eilmadc-ws/collection/17239322-4
 
    ![image](https://user-images.githubusercontent.com/57563030/234981378-490d6a37-9a7e-43e0-8fa0-bb1d8fbd4b32.png)
 
-### 10. EXTRA Update an dentist in appoinment
+### 10. EXTRA Update a dentist in appoinment
    - **method:** PUT
    - **endpoint:** localhost:8181/api/appoinments/{id}
    - **example:** localhost:8181/api/appoinments/5
@@ -135,7 +135,7 @@ Link: https://www.postman.com/eilmadc/workspace/eilmadc-ws/collection/17239322-4
    
 ![image](https://user-images.githubusercontent.com/57563030/234982200-d6ac12a1-a0bc-4f62-840e-ec4192ae4c15.png)
 
-### 11. EXTRA Read all appointments for an dentist (by id)
+### 11. EXTRA Read all appointments for a dentist (by id)
    - **method:** GET
    - **endpoint:** localhost:8181/api/appoinments/dentist/{id}
    - **example:** localhost:8181/api/appoinments/dentist/5
