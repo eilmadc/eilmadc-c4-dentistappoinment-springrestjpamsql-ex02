@@ -7,7 +7,7 @@
 
 ## Creating Project:
 
-Its a **Spring Maven War** Project with the following dependencies described in **pom.xml**:
+Its a **Spring Maven War** Project with the following dependencies related in **pom.xml**:
 
          <dependencies>
           <dependency>
@@ -46,4 +46,9 @@ Its a **Spring Maven War** Project with the following dependencies described in 
 ## Data model ER
 
 ## Postman Collection
+
+Link: https://www.postman.com/eilmadc/workspace/eilmadc-ws/collection/17239322-40388baa-840c-4693-a709-3268fbe372cf?action=share&creator=17239322
+
+![image](https://user-images.githubusercontent.com/57563030/234870200-55164c00-17b9-4015-adb6-ce3b0b64ec71.png)
+
 
