@@ -44,6 +44,7 @@ Its a **Spring Maven War** Project with the following dependencies related in **
 
 
 ## Data model ER
+![ex02 Dentists-Appoinments](https://user-images.githubusercontent.com/57563030/234974955-669ac5c5-4428-4870-94af-a4951a58778a.png)
 
 ## Postman Collection
 
